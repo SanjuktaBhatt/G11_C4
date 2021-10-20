@@ -1,8 +1,5 @@
 import pygame
 pygame.init() 
-
-
-
 screen = pygame.display.set_mode((600, 600))
 pygame.display.set_caption("Breakout Game")
 paddle=pygame.Rect(300,500,60,10)
@@ -43,6 +40,7 @@ while carryOn:
     
     
     
+    pygame.time.wait(15)
     pygame.display.flip()
 pygame.quit()
     
