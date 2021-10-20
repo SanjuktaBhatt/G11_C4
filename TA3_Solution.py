@@ -1,8 +1,5 @@
 import pygame
 pygame.init() 
-
-
-
 screen = pygame.display.set_mode((600, 600))
 pygame.display.set_caption("Breakout Game")
 paddle=pygame.Rect(300,500,60,10)
@@ -25,24 +22,22 @@ while carryOn:
                 paddle.x-=paddlex
            
     pygame.draw.rect(screen,(0,176,240),paddle)
-    ball.x=ball.x+ballx
-    ball.y=ball.y+bally
-    if ball.x>=590:
-        ballx=-ballx
-    if ball.x<=10:
-        ballx=-ballx
-    if ball.y>=590:
-        bally=-bally
-    if ball.y<=10:
-        bally=-bally
-    if paddle.collidepoint(ball.x,ball.y):
-        bally=-bally
+    ball.x = ball.x + ballx
+    ball.y = ball.y + bally
+    if ball.x >= 590:
+      ballx = -ballx
+    if ball.x <= 10:
+      ballx = -ballx
+    if ball.y >= 590:
+      bally = -bally
+    if ball.y <= 10:
+      bally = -bally
    
     pygame.draw.rect(screen,(255,255,255) ,ball)
     #Solution
     for i in range(6):
-     brick=pygame.Rect(10 + i* 100,60,80,30)
-      pygame.draw.rect(screen,(255,0,0),brick)
+        brick = pygame.Rect(10 + i* 100,60,80,30)
+        pygame.draw.rect(screen,(255,0,0),brick)
+    pygame.time.wait(15)
     pygame.display.flip()
 pygame.quit()
-    
